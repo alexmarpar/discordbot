@@ -2273,6 +2273,21 @@ def setup_economy(client):
         economy_on_voice_state_update,
         "on_voice_state_update"
     )
+    # ========================================================
+    # (Mute, deafen, etc.)
+    # ========================================================
+    if was_in_voice and is_in_voice:
+        if user_counts_for_voice(member):
+            # Si he compliments
+            await start_voice_session(
+                member.guild.id,
+                member.id
+            )
+        else:
+            await stop_voice_session(
+                member.guild.id,
+                member.id
+            )
 
     print(
         "[ECONOMY] Módulo registrado correctamente",
