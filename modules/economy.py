@@ -1195,7 +1195,13 @@ async def stop_voice_session(
         flush=True
     )
 
-
+print(
+    f"[DEBUG][VOICE REWARD] "
+    f"user={user_id} "
+    f"seconds={seconds} "
+    f"rate={VOICE_REWARD_PER_MINUTE}",
+    flush=True
+)
 async def add_voice_time(
     guild_id,
     user_id,
@@ -1223,6 +1229,12 @@ async def add_voice_time(
         Decimal("0.01"),
         rounding=ROUND_DOWN
     )
+    print(
+    f"[DEBUG][VOICE REWARD] "
+    f"minutes={minutes} "
+    f"reward={reward}",
+    flush=True
+)
 
     current = now()
 
@@ -2273,22 +2285,6 @@ def setup_economy(client):
         economy_on_voice_state_update,
         "on_voice_state_update"
     )
-    # ========================================================
-    # (Mute, deafen, etc.)
-    # ========================================================
-    if was_in_voice and is_in_voice:
-        if user_counts_for_voice(member):
-            # Si he compliments
-            await start_voice_session(
-                member.guild.id,
-                member.id
-            )
-        else:
-            await stop_voice_session(
-                member.guild.id,
-                member.id
-            )
-
     print(
         "[ECONOMY] Módulo registrado correctamente",
         flush=True
