@@ -1195,13 +1195,13 @@ async def stop_voice_session(
         flush=True
     )
 
-print(
+    print(
     f"[DEBUG][VOICE REWARD] "
     f"user={user_id} "
     f"seconds={seconds} "
     f"rate={VOICE_REWARD_PER_MINUTE}",
     flush=True
-)
+    )
 async def add_voice_time(
     guild_id,
     user_id,
@@ -1234,7 +1234,7 @@ async def add_voice_time(
     f"minutes={minutes} "
     f"reward={reward}",
     flush=True
-)
+    )
 
     current = now()
 
