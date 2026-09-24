@@ -130,7 +130,6 @@ async def main():
         flush=True
     )
 
-    #setup_ai(client)
     setup_stats(client)
     setup_economy(client)
     setup_shop(client)
