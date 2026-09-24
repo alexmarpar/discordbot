@@ -31,4 +31,9 @@ And whatever you want
 
 3. In Outh2 copy the link and configure your web api en your discord server.
 4. Setup your environment variables.
-5. Check the commands putting `/` and select the icon of your webhook.
+5. Execute 
+```python
+python main.py
+```
+Once done, your bot is running.
+6. Check the commands putting `/` and select the icon of your webhook.
