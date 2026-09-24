@@ -3,3 +3,4 @@ aiosqlite
 requests
 psycopg[binary,pool]
 psycopg-pool
+dotenv

@@ -6,12 +6,14 @@ import discord
 from discord import app_commands
 from psycopg_pool import AsyncConnectionPool
 
+from dotenv import load_dotenv
 
+load_dotenv()
 # ============================================================
 # CONFIG
 # ============================================================
 
-DATABASE_URL = os.getenv("DATABASE_ECONOMY_URL")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 if not DATABASE_URL:
     raise RuntimeError(

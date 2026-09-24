@@ -5,10 +5,10 @@ import discord
 from discord.ext import commands
 
 from modules.ai import setup_ai
-from modules.stats import setup_stats
-from modules.economy import setup_economy
+from modules.stats.setup import setup_stats
+from modules.economy.setup import setup_economy
 from modules.shop import setup_shop
-
+import selectors
 
 # ============================================================
 # CONFIG
@@ -130,7 +130,7 @@ async def main():
         flush=True
     )
 
-    setup_ai(client)
+    #setup_ai(client)
     setup_stats(client)
     setup_economy(client)
     setup_shop(client)
@@ -147,6 +147,16 @@ async def main():
 # START
 # ============================================================
 
+"""
 if __name__ == "__main__":
 
     asyncio.run(main())
+
+"""
+if __name__ == "__main__":
+    asyncio.run(
+        main(),
+        loop_factory=lambda: asyncio.SelectorEventLoop(
+            selectors.SelectSelector()
+        ),
+    )
