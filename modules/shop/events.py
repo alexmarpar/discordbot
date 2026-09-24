@@ -17,12 +17,23 @@ async def on_ready():
         flush=True
     )
 
-    await db.connect()
-    await init_schema()
+    try:
+        await db.connect()
+        await init_schema()
 
-    _initialized = True
+        _initialized = True
 
-    print(
-        "[SHOP] Módulo listo",
-        flush=True
-    )
+        print(
+            "[SHOP] Módulo listo",
+            flush=True
+        )
+
+    except Exception as error:
+
+        print(
+            f"[SHOP] ERROR inicializando: "
+            f"{type(error).__name__}: {error}",
+            flush=True
+        )
+
+        raise

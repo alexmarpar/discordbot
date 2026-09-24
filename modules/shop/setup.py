@@ -8,7 +8,6 @@ from .commands import (
     shop_command,
     buy_command,
     inventory_command,
-    shop_info_command,
     shop_add_command,
     shop_remove_command,
     shop_edit_command,
