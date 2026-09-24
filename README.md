@@ -36,4 +36,5 @@ And whatever you want
 python main.py
 ```
 Once done, your bot is running.
+
 6. Check the commands putting `/` and select the icon of your webhook.
