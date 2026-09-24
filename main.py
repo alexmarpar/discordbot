@@ -147,12 +147,13 @@ async def main():
 # START
 # ============================================================
 
-"""
 if __name__ == "__main__":
 
     asyncio.run(main())
 
+
 """
+windows11(dev)
 if __name__ == "__main__":
     asyncio.run(
         main(),
@@ -160,3 +161,4 @@ if __name__ == "__main__":
             selectors.SelectSelector()
         ),
     )
+"""
